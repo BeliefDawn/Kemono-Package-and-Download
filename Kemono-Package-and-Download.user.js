@@ -18,16 +18,16 @@
     // Function to download an image and add to zip
     function addImageToZip(url, filename, zip) {
         return fetch(url)
-            。then(response => {
+            .then(response => {
                 if (!response.ok) {
                     throw new Error(`Error fetching ${url}`);
                 }
                 return response.blob();
             })
-            。then(blob => {
+            .then(blob => {
                 zip.file(filename, blob);
             })
-            。catch(err => {
+            .catch(err => {
                 console.error(err);
             });
     }
